@@ -1,0 +1,39 @@
+/* Styles pour l'élément card-element */
+#card-element {
+  background-color: #ffffff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+
+}
+
+/* Styles pour le texte d'erreur */
+#card-errors {
+  color: #dc3545; /* Couleur rouge */
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Styles pour le bouton de paiement */
+#submit-payment {
+  background-color: #007bff; /* Couleur bleue */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submit-payment:hover {
+  background-color: #0056b3; /* Couleur bleue plus foncée au survol */
+}
+
+.containerCard{
+max-width:50%;
+margin-left:25%;
+}
+

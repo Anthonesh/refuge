@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/crud.css') }}">
+{% endblock %}
+
+{% block title %}Pensionnaires index{% endblock %}
+
+{% block main %}
+    <h1>Pensionnaires index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_pensionnaire</th>
+                <th>Type_pensionnaire</th>
+                <th>Date_de_naissance_pensionnaire</th>
+                <th>Image_pensionnaire</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pensionnaire in pensionnaires %}
+            <tr>
+                <td>{{ pensionnaire.id }}</td>
+                <td>{{ pensionnaire.nomPensionnaire }}</td>
+                <td>{{ pensionnaire.typePensionnaire }}</td>
+                <td>{{ pensionnaire.dateDeNaissancePensionnaire ? pensionnaire.dateDeNaissancePensionnaire|date('Y-m-d') : '' }}</td>
+                <td>{{ pensionnaire.imagePensionnaire }}</td>
+                <td>
+                    <a href="{{ path('app_pensionnaires_show', {'id': pensionnaire.id}) }}">show</a>
+                    <a href="{{ path('app_pensionnaires_edit', {'id': pensionnaire.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_pensionnaires_new') }}">Create new</a>
+{% endblock %}

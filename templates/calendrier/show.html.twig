@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/crud.css') }}">
+{% endblock %}
+
+{% block title %}Calendrier{% endblock %}
+
+{% block body %}
+    <h1>Calendrier</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ calendrier.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre_calendrier</th>
+                <td>{{ calendrier.titreCalendrier }}</td>
+            </tr>
+            <tr>
+                <th>Debut_calendrier</th>
+                <td>{{ calendrier.debutCalendrier ? calendrier.debutCalendrier|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Fin_calendrier</th>
+                <td>{{ calendrier.finCalendrier ? calendrier.finCalendrier|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description_calendrier</th>
+                <td>{{ calendrier.descriptionCalendrier }}</td>
+            </tr>
+            <tr>
+                <th>Couleur_fond_calendrier</th>
+                <td>{{ calendrier.couleurFondCalendrier }}</td>
+            </tr>
+            <tr>
+                <th>Couleur_bordure_calendrier</th>
+                <td>{{ calendrier.couleurBordureCalendrier }}</td>
+            </tr>
+            <tr>
+                <th>Couleur_texte_calendrier</th>
+                <td>{{ calendrier.couleurTexteCalendrier }}</td>
+            </tr>
+        </tbody>
+    </table>
+<div class="buttons">
+    <a href="{{ path('app_calendrier_index') }}">Retour</a>
+    <a href="{{ path('app_calendrier_edit', {'id': calendrier.id}) }}">Modifier</a>
+    {{ include('calendrier/_delete_form.html.twig') }}
+</div>
+{% endblock %}

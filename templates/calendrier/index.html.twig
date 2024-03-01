@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/crud.css') }}">
+{% endblock %}
+
+{% block title %}Calendrier index{% endblock %}
+
+{% block main %}
+    <h1>Calendrier index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre_calendrier</th>
+                <th>Debut_calendrier</th>
+                <th>Fin_calendrier</th>
+                <th>Description_calendrier</th>
+                <th>Couleur_fond_calendrier</th>
+                <th>Couleur_bordure_calendrier</th>
+                <th>Couleur_texte_calendrier</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for calendrier in calendriers %}
+            <tr>
+                <td>{{ calendrier.id }}</td>
+                <td>{{ calendrier.titreCalendrier }}</td>
+                <td>{{ calendrier.debutCalendrier ? calendrier.debutCalendrier|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ calendrier.finCalendrier ? calendrier.finCalendrier|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ calendrier.descriptionCalendrier }}</td>
+                <td>{{ calendrier.couleurFondCalendrier }}</td>
+                <td>{{ calendrier.couleurBordureCalendrier }}</td>
+                <td>{{ calendrier.couleurTexteCalendrier }}</td>
+                <td>
+                    <a href="{{ path('app_calendrier_show', {'id': calendrier.id}) }}">show</a>
+                    <a href="{{ path('app_calendrier_edit', {'id': calendrier.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_calendrier_new') }}">Create new</a>
+{% endblock %}

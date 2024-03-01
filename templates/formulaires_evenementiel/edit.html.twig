@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Formulaires{% endblock %}
+
+{% block main %}
+    <h1>Edit Calendrier</h1>
+
+    {{ include('formulaires_evenementiel/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_formulaires_evenementiel_index') }}">back to list</a>
+
+    {{ include('formulaires_evenementiel/_delete_form.html.twig') }}
+    {% include 'components/carousel.html.twig'%}
+{% endblock %}

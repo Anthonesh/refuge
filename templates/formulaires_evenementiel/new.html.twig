@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
+{% endblock %}
+
+{% block title %}Réservation d'évènement{% endblock %}
+
+{% block main %}
+    <h1>Formulaire de réservation</h1>
+
+    {{ include('formulaires_evenementiel/_form.html.twig') }}
+
+    <a href="{{ path('app_formulaires_evenementiel_index') }}">back to list</a>
+    {% include 'components/carousel.html.twig'%}
+{% endblock %}

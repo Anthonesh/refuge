@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/crud.css') }}">
+{% endblock %}
+
+{% block title %}Formulaires index{% endblock %}
+
+{% block main %}
+    <h1>Formulaires index</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_formulaire</th>
+                <th>Prenom_formulaire</th>
+                <th>Telephone_formulaire</th>
+                <th>Email_formulaire</th>
+                <th>Numero_rue_formulaire</th>
+                <th>Rue_formulaire</th>
+                <th>Code_postal_formulaire</th>
+                <th>Ville_formulaire</th>
+                <th>Pays_formulaire</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formulaire in formulaires %}
+            <tr>
+                <td>{{ formulaire.id }}</td>
+                <td>{{ formulaire.nomFormulaire }}</td>
+                <td>{{ formulaire.prenomFormulaire }}</td>
+                <td>{{ formulaire.telephoneFormulaire }}</td>
+                <td>{{ formulaire.emailFormulaire }}</td>
+                <td>{{ formulaire.numeroRueFormulaire }}</td>
+                <td>{{ formulaire.rueFormulaire }}</td>
+                <td>{{ formulaire.codePostalFormulaire }}</td>
+                <td>{{ formulaire.villeFormulaire }}</td>
+                <td>{{ formulaire.paysFormulaire }}</td>
+                <td>{{ formulaire.nombreParticipantsFormulaire }}</td>
+                <td>
+                    <a href="{{ path('app_formulaires_evenementiel_show', {'id': formulaire.id}) }}">show</a>
+                    <a href="{{ path('app_formulaires_evenementiel_edit', {'id': formulaire.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <a href="{{ path('app_formulaires_evenementiel_new') }}">Create new</a>
+
+    {% include 'components/carousel.html.twig'%}
+{% endblock %}

@@ -1,0 +1,78 @@
+/* Style du modal */
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Personnalisation de l'apparence du modal */
+.modal-content {
+    background-color: #36693b;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Ajout d'une animation pour l'ouverture du modal */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+/* Style du titre du modal */
+.modal-title {
+    color: #333;
+}
+
+/* Style du corps du modal */
+.modal-body {
+    padding: 2px 16px;
+}
+
+.event-time {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style des boutons du modal */
+.modal-footer {
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    color: white;
+}
+
+/* Bouton de fermeture du modal */
+.btn-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.btn-close:hover,
+.btn-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style des boutons standards du modal */
+.modal-footer .btn {
+    background-color: #183926; /* Green */
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.modal-footer .btn:hover {
+    opacity: 1;
+}

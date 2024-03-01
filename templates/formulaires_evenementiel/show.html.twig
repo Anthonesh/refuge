@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}formulaires{% endblock %}
+
+{% block main %}
+    <h1>Formulaires Evenementiel</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ formulaire.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ formulaire.nomFormulaire }}</td>
+            </tr>
+            <tr>
+                <th>Prénom</th>
+                <td>{{ formulaire.prenomFormulaire }}</td>
+            </tr>
+            <tr>
+                <th>Telephones</th>
+                <td>{{ formulaire.telephoneFormulaire }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ formulaire.emailFormulaire }}</td>
+            </tr>
+            <tr>
+                <th>Numéro de rue</th>
+                <td>{{ formulaire.numeroRueFormulaire }}</td>
+            </tr>
+            <tr>
+                <th>Nom de rue</th>
+                <td>{{ formulaire.rueFormulaire }}</td>
+            </tr>
+            <tr>
+                <th>Code postal</th>
+                <td>{{ formulaire.codePostalFormulaire }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ formulaire.villeFormulaire }}</td>
+            </tr>
+            <tr>
+                <th>Pays</th>
+                <td>{{ formulaire.paysFormulaire }}</td>
+            </tr>
+            <tr>
+                <th>Nombres de participants</th>
+                <td>{{ formulaire.nombreParticipantsFormulaire }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_formulaires_evenementiel_index') }}">back to list</a>
+
+    <a href="{{ path('app_formulaires_evenementiel_edit', {'id': formulaire.id}) }}">edit</a>
+
+    {{ include('formulaires_evenementiel/_delete_form.html.twig') }}
+    
+    {% include 'components/carousel.html.twig'%}
+{% endblock %}

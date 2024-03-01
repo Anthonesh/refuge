@@ -1,0 +1,30 @@
+/* Styles pour les cartes */
+.cards {
+    display: grid;
+    /* justify-content: center;
+    align-items: center; */
+    margin-top: 5%;
+    margin-bottom: 5%;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Plus flexible */
+    gap: 3% 3%; 
+    width: 100%; /* Utilisez 100% de la largeur disponible */
+    max-width: 100%
+}
+
+/* Styles pour les cartes individuelles */
+.cards .card {
+    width: 100%; /* Largeur adaptative */
+    height: auto; /* Hauteur adaptative */
+    /* Autres styles... */
+}
+
+.card:hover {
+    transform: scale(1.1); /* Agrandissement de l'image sur survol */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /*Définition d'un ombrage */
+}
+
+a:hover {
+    text-decoration: none;
+    border: none;
+    outline: none;
+}

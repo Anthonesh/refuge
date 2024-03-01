@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <html lang="en">
+        <meta charset="UTF-8">
+        <meta name="description" content="Ceci est la page de structuration des mes différentes pages du site. Elle sera réutilisé sur chacune d'entre elle afin de gérer le design et la mise en page efficacment ">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all">
+        <title>{% block title %}{% endblock %}</title>
+
+        <link rel="stylesheet" href="{{asset('css/base.css')}}">
+        {% block stylesheets %}
+            
+        {% endblock %}
+
+       <script src="{{ asset('js/script.js') }}"></script> 
+        {% block javascripts %}
+            
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <header>
+            {% include 'components/header.html.twig' %}
+            </header>
+            {% block banner %}
+            {% endblock %}
+            <div class="content">
+                <button class="aside-toggle"  onclick="toggleAside()">Actualités</button>
+                <aside class="aside">
+                    {% include 'components/aside.html.twig'%}
+                </aside>
+
+                <main class="main">
+                {% block main %}
+
+
+                {% endblock %}
+                </main>
+            </div>
+
+            <footer>
+{% include 'components/footer.html.twig' %}   
+            </footer>
+        {% endblock %}      
+    </body>
+</html>

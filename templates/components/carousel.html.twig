@@ -1,0 +1,17 @@
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/carousel.css') }}">
+{% endblock %}
+
+<div class="carousel-container">
+    <div id="carousel" class="carousel">
+        {% for pensionnaire in pensionnaires %}
+        <div class="carousel-img-container hideRight">
+            <a href="{{ path('app_details_pensionnaires', {'id': pensionnaire.id}) }}">
+                <img src="{{ asset(pensionnaire.getImagePensionnaire()) }}" alt="Image" class="carousel-img" />
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    <img src="{{ asset('assets/icons/navigation.svg') }}" alt="Flèche droite" class="navigation-arrow next" id="nextButton">
+    <img src="{{ asset('assets/icons/navigation.svg') }}" alt="Flèche gauche" class="navigation-arrow prev" id="prevButton">
+</div>

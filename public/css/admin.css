@@ -1,0 +1,30 @@
+.admin-container{
+    margin: auto;
+    overflow: hidden;
+    width: 100%;
+}
+
+.admin-main{
+    display:flex;
+    justify-content:space-evenly;
+}
+
+
+.admin-pensionnaires{
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-pensionnaires a{
+    text-decoration: none;
+}
+
+.admin-evenements{
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-participants{
+    display: flex;
+    flex-direction: column;
+}

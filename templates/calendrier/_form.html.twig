@@ -1,0 +1,15 @@
+{{ form_start(form, {'attr': {'id': 'form'}}) }}
+    {{ form_row(form.titre_calendrier, {'attr': {'class': 'form-control'}}) }}
+    {{ form_row(form.debut_calendrier, {'attr': {'class': 'form-control'}}) }}
+    {{ form_row(form.fin_calendrier, {'attr': {'class': 'form-control'}}) }}
+    {{ form_row(form.description_calendrier, {'attr': {'class': 'form-control'}}) }}
+    {{ form_row(form.couleur_fond_calendrier, {'attr': {'class': 'form-control'}}) }}
+    {{ form_row(form.couleur_bordure_calendrier, {'attr': {'class': 'form-control'}}) }}
+    {{ form_row(form.couleur_texte_calendrier, {'attr': {'class': 'form-control'}}) }}
+    {{ form_row(form.places_disponibles_calendrier, {'attr': {'class': 'form-control'}}) }}
+    <div class="form-actions">
+        <button type="submit" class="btnSave">Enregistrer</button>
+        <button onclick="location.href='{{ path('app_calendrier_index') }}'" class="btnBack" type="button">retour</button>
+    </div>
+{{ form_end(form) }}
+

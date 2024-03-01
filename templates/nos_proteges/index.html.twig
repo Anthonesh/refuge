@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Refuge de St brès pour équidés{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/cards.css')}}">
+
+{% endblock %}
+
+
+
+{% block main %}
+        <h2>Découvrez nos petits protégées</h2>
+
+            <div class="cards">
+                {% for pensionnaire in pensionnaires %}
+                <a href="{{ path('app_details_pensionnaires', {'id': pensionnaire.id}) }}">
+                <img src="{{ asset('' ~ pensionnaire.getImagePensionnaire()) }}" alt="carousel-img" class="card" />  
+                {% endfor %}
+            </div>
+            {% include 'components/carousel.html.twig'%}
+
+{% endblock %}

@@ -1,0 +1,158 @@
+/* Style Create */
+
+/* Style pour le formulaire */
+.custom-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour les champs de formulaire */
+.custom-form .form-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style for the secondary button (Back to list) */
+.custom-form .btnSave {
+    background-color: #183926; /* Gray */
+    color: white;
+}
+
+.custom-form .btnSave:hover {
+    background-color: #007bff; /* Darker gray */
+}
+
+/* Style for the secondary button (Back to list) */
+.custom-form .btnBack {
+    background-color: #007bff; /* Gray */
+    color: white;
+}
+
+.custom-form .btnBack:hover {
+    background-color: #183926; /* Darker gray */
+}
+
+/* To change the color input's default color */
+input[type='color'] {
+    background-color: #ffffff; /* Change this to the color you want */
+    border: 1px solid #ddd;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* For the datetime picker, it depends on the browser and sometimes you can't change it directly */
+/* However, you can attempt some general styling */
+input[type='datetime-local'], input[type='date'], input[type='time'] {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+/* Style pour les boutons */
+.custom-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.custom-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Style pour les liens */
+.custom-form a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.custom-form a:hover {
+    text-decoration: underline;
+}
+
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Styles pour la table */
+.table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 16px;
+}
+
+.table th {
+    background-color:#52907F;
+    color:#ffffff
+}
+
+.table td {
+    background-color: #ffffff;
+}
+
+
+/* Alignement des boutons sous le tableau */
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style de base pour les boutons */
+.button {
+    padding: 10px 20px; /* Padding autour du texte */
+    margin: 0 10px; /* Marge entre les boutons */
+    border: none; /* Pas de bordure */
+    cursor: pointer; /* Curseur en forme de pointeur */
+    text-decoration: none; /* Pas de soulignement du texte */
+}
+
+.button:hover {
+    background-color: #45a049; /* Couleur de fond au survol */
+}
+
+.btnDelete{
+    background-color: #007bff;
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 10px 5px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btnDelete:hover {
+    background-color: #0069d9; /* Couleur de fond au survol */
+}

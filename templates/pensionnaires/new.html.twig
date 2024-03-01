@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
+{% endblock %}
+
+
+{% block title %}Nouveau Pensionnaires{% endblock %}
+
+{% block main %}
+    <h1>Ajout de nouveaux pensionnaires</h1>
+
+    {{ include('pensionnaires/_form.html.twig') }}
+
+{% endblock %}

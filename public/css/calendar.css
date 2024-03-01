@@ -1,0 +1,15 @@
+#calendar {
+    height: 80%;
+    width: 70%;
+    margin: auto;
+}
+
+.fc-button-group, .fc-next-button, .fc-today-button fc-timeGridWeek-button{
+    background-color: #007bff;
+    color: white; /
+}
+
+/* Change la couleur lors du survol */
+.fc-prev-button:hover, .fc-next-button:hover, .fc-today-button:hover {
+    background-color: rgb(48, 111, 174);
+}

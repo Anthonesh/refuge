@@ -1,0 +1,32 @@
+<header class="header">
+    <nav class="navBar">
+        <!-- Logo -->
+        <img src="{{ asset('assets/icons/LogoSanctuary.webp') }}" alt="logo" class="logo">
+
+        <!-- Bouton du menu burger -->
+        <button class="burger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Liens de navigation -->
+        <div class="navLinks">
+            <ul>
+                <li><a href="{{ path('app_index') }}">Accueil</a></li>
+                <li><a href="{{ path('app_nos_proteges') }}">Nos protégés</a></li>
+                <li><a href="{{ path('app_benevolat') }}">Bénévolat</a></li>
+                <li><a href="{{ path('app_evenementiel') }}">Evènementiel</a></li>
+                <li><a href="{{ path('app_projets_a_venir') }}">Projets à venir</a></li>
+                <li><button class="donButton" href="{{ path('app_dons') }}">Dons</button></li>
+                {% if app.user and 'ROLE_ADMIN' in app.user.roles %}
+                    <li><a href="{{ path('app_admin') }}">Administration</a></li>
+                {% endif %}
+                <li><a href="{{ path('app_login') }}">
+                <img src="{{ asset('assets/icons/login.svg') }}" alt="icon_login" />
+                </a>
+            </ul>
+        </div>
+    </nav>
+</header>
+

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
+{% endblock %}
+
+
+{% block title %}Réserver un créneau{% endblock %}
+
+{% block main %}
+    <h2>Réserver un créneau</h2>
+
+
+        {{ form_start(form, {'attr': {'id': 'form'}}) }}
+
+        {{ form_widget(form) }}
+
+        <div class="form-actions">
+        <button type="submit" class="btnSave">Enregistrer</button>
+        <button onclick="location.href='{{ path('app_benevolat') }}'" class="btnBack" type="button">retour</button>
+    </div>
+
+        {{ form_end(form) }}
+
+{% endblock %}

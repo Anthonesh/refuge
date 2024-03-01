@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement du don{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/payment.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{{ asset('js/stripe.js') }}"></script> 
+{% endblock %}
+
+{% block main %}
+    <h1>Paiement du don</h1>
+
+    {% if stripePublicKey is defined and clientSecret is defined %}
+        <div id="stripe-data" 
+            data-stripe-key="{{ stripePublicKey }}"
+            data-client-secret="{{ clientSecret }}">
+        </div>
+    {% else %}
+        <p>Erreur : Les données Stripe ne sont pas définies correctement.</p>
+    {% endif %}
+<div class='containerCard'>
+    <div id="card-element">
+        <!-- Un div vide pour les éléments Stripe -->
+    </div>
+    <div id="card-errors" role="alert"></div>
+    <button class="btn" id="submit-payment">Payer</button>
+</div>
+{% include 'components/carousel.html.twig'%}
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
+{% endblock %}
+
+{% block title %}Dons{% endblock %}
+
+{% block javascript %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var boutonContinue = document.querySelector('.continue-to-payment');
+
+    if (boutonContinue) {
+        boutonContinue.addEventListener('click', function() {
+            // Stocker les données dans le session storage
+            var montantDon = document.getElementById('montantDon').value;
+            sessionStorage.setItem('montantDon', montantDon);
+            // Rediriger vers la page de paiement
+            window.location.href = '/dons/paiement';
+        });
+    }
+});
+</script>
+{% endblock %}
+
+{% block main %}
+    <h1>Formulaire de dons</h1>
+
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {{ form_start(form, {'attr': {'id': 'form'}}) }}
+        <h2>Informations du donateur</h2>
+        {{ form_widget(form) }}
+
+    <button type="submit" class="btn btnSave continue-to-payment">Continuer vers le paiement</button>
+    {{ form_end(form) }}
+
+    {% include 'components/carousel.html.twig'%}
+{% endblock %}

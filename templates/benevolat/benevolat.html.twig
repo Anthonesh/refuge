@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/planning.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
+{% endblock %}
+
+
+{% block title %}Benevolat{% endblock %}
+
+{% block main %}      
+
+        <h2>Découvrez nos petits protégées</h2>
+<table>
+    <thead>
+        <tr>
+            <th></th> {# Laissez une cellule vide pour l'en-tête #}
+            {% for plageHoraire in plagesHoraires %}
+                <th>{{ plageHoraire.heureDebut|date('H:i') }} - {{ plageHoraire.heureFin|date('H:i') }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for jour in jours %}
+    <tr>
+        <th>{{ jour.jourSemaine }}</th>
+        {% for plageHoraire in plagesHoraires %}
+            <td>
+                {# Vérifiez s'il y a une réservation pour cette plage horaire et ce jour #}
+                {% set reservation = reservations[jour.id][plageHoraire.id] %}
+                {% if reservation and reservation.jour.id == jour.id and reservation.heure.id == plageHoraire.id %}
+                    {{ reservation.nom}} {{ reservation.prenom }}
+                {% else %}
+                    {# Affichez quelque chose si aucune réservation n'existe pour ce jour et cette heure #}
+                    <a href="{{ path('app_reservations_create', {'jourId': jour.id, 'heureId': plageHoraire.id}) }}">
+                        Réserver
+                    </a>
+                {% endif %}
+            </td>
+        {% endfor %}
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+        {% include 'components/carousel.html.twig'%}
+
+{% endblock %}

@@ -1,0 +1,131 @@
+/* Styles pour le conteneur du carousel */
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; 
+    width:100%;
+    height: 50vh; 
+}
+
+/* Styles pour le carousel principal */
+.carousel {
+    display: flex;
+    justify-content: center; 
+    position: relative;
+    width: 100%;
+    height: 400px; 
+    align-items: center; 
+    margin-top: 4%;
+}
+
+ /* Styles pour chaque conteneur d'image dans le carousel */
+.carousel-img-container {
+    transition: transform 1s ease, opacity 1s ease;
+    width: 20vh; 
+    flex: 0 0 auto; 
+    opacity: 0; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    position: absolute; 
+}
+
+.carousel-img {
+    max-width: 100%; 
+    max-height: 100%; 
+    height: 20vh;
+    border-radius: 3%;
+}
+
+/* Styles pour l'image sélectionnée */
+.selected {
+    transform: scale(1.1); 
+    z-index: 5; 
+    opacity: 1;
+}
+
+/* Style pour les images directement à côté de la sélectionnée */
+.prev, .next {
+    transform: scale(0.9); 
+    z-index: 4; 
+    opacity: 0.8;
+}
+
+.prev {
+    left: 32%; 
+}
+
+.next {
+    right: 32%;
+    
+}
+
+/* Style pour les images à deux positions de la sélectionnée */
+.prevLeftSecond, .nextRightSecond {
+    transform: scale(0.8); 
+    z-index: 3; 
+    opacity: 0.6;
+}
+
+.prevLeftSecond {
+    left: 22%; 
+    opacity: 0.4;
+}
+
+.nextRightSecond {
+    right: 22%; 
+    opacity: 0.4;
+}
+
+
+/* Style pour les images cachées à l'extrême gauche et droite */
+.hideLeft, .hideRight {
+    display: none; 
+}
+
+.navigation-arrow {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    z-index: 10;
+    width:100px;
+    height: 42px;
+}
+
+/* Boutons de navigation ajustés pour éviter les superpositions */
+#prevButton{
+    transform: scaleX(-1);
+    left: 200px;
+
+}
+
+#nextButton{
+    right: 200px;
+
+}
+
+/* Media queries pour la responsivité */
+@media screen and (max-width: 768px) {
+    
+
+    /* Ajustements pour le conteneur du carrousel */
+    .carousel-container {
+        width: 100%; /* Utiliser toute la largeur disponible */
+        margin: 0 auto; /* Centrage et suppression des marges extérieures */
+        padding: 10px; /* Ajout d'un peu de padding pour l'espacement */
+        overflow: hidden; /* Cache les débordements éventuels */
+    }
+    
+
+    #prevButton{
+        transform: scaleX(-1);
+        left: -10px;
+    }
+
+    #nextButton{
+        right: -10px;
+    }
+}
